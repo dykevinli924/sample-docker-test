@@ -6,9 +6,9 @@ node_js:
 services: 
     - docker
 before_install: 
-    - docker build -t kevinli92924/sample-docker-test -f Dockerfile.dev .
+    - docker build -t kevinli92924/sample-app -f Dockerfile.dev .
 script:     
-    - docker run -e CI=true kevinli92924/sample-docker-test npm run test -- --coverage --watchAll=false
+    - docker run -e CI=true kevinli92924/sample-app npm run test -- --coverage --watchAll=false
 
 deploy:
   provider: elasticbeanstalk
@@ -19,5 +19,5 @@ deploy:
   bucket_path: "EBApptest" ### S3 folder name under S3 bucket above
   on:
     branch: main
-  access_key_id: "AKIA4TE36VP46P6LG4VM"
-  secret_access_key: "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"
+  access_key_id: "$AKIA4TE36VP46P6LG4VM"
+  secret_access_key: "$lJNfcx/Mliu4CDgGu1sRENxxKsp+nYsbkBzvrWcx"
