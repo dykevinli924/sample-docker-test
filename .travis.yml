@@ -6,9 +6,9 @@ node_js:
 services: 
     - docker
 before_install: 
-    - docker build -t kevinli92924/sample-app -f Dockerfile.dev .
+    - docker build -t kevinli92924/react-app -f Dockerfile.dev .
 script:     
-    - docker run -e CI=true kevinli92924/sample-app npm run test -- --coverage --watchAll=false
+    - docker run -e CI=true kevinli92924/react-app npm run test -- --coverage --watchAll=false
 
 deploy:
   provider: elasticbeanstalk
