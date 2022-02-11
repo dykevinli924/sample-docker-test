@@ -7,7 +7,7 @@ WORKDIR './app'
 COPY package*.json ./
 # To prevent repeated npm installs anytime we make any change, we'd copy over the package.json and install things first
 
-RUN npm install
+RUN npm install 
 # Install dependencies
 
 COPY ./ ./
